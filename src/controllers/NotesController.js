@@ -7,7 +7,7 @@ import { notesService } from "../services/NotesService.js";
 
 export class NotesController extends BaseController {
 
-	constructor() {
+	constructor () {
 		super('api/notes')
 		this.router
 			.get('', this.getNotes)

@@ -8,7 +8,7 @@ import { notesService } from "../services/NotesService.js";
 
 export class BugsController extends BaseController {
 
-	constructor() {
+	constructor () {
 		super('api/bugs')
 		this.router
 			.get('', this.getBugs)
@@ -97,8 +97,8 @@ export class BugsController extends BaseController {
 
 	async getTrackedBugByUsers(request, response, next) {
 		try {
-			const trackedBugId = request.params.trackedBugId
-			const trackedBug = await trackedBugsService.getTrackedBugByUsers(trackedBugId)
+			const bugId = request.params.bugId
+			const trackedBug = await trackedBugsService.getTrackedBugByUsers(bugId)
 			response.send(trackedBug)
 		}
 		catch (error) {
